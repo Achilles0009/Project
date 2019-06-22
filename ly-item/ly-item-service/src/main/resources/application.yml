@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/heima68
+    username: root
+    password: qwer1234
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+    zuul:
+      prefix: /api # 添加路由前缀
+      routes:
+        item-service: /item/** # 将商品微服务映射到/item/**
