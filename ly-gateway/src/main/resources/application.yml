@@ -21,5 +21,26 @@ ribbon:
   MaxAutoRetries: 0  # 当前服务重试次数
   MaxAutoRetriesNextServer: 1 # 切换服务重试次数
   OkToRetryOnAllOperations: false # 是否对所有的请求方式都重试，只对get请求重试
+
+
 zuul:
-  prefix: /api
+      prefix: /api # 添加路由前缀
+      routes:
+        item-service: /item/** # 将商品微服务映射到/item/**
+
+ly:
+  cors:
+    allowedOrigins:
+      - http://manage.leyou.com
+    allowedCredentials: true
+    allowedHeaders:
+      - "*"
+    allowedMethods:
+      - GET
+      - POST
+      - DELETE
+      - PUT
+      - OPTIONS
+      - HEAD
+    maxAge: 360000
+    filterPath: "/**"

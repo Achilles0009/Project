@@ -23,6 +23,7 @@ public enum  ExceptionEnum {
         APPLICATION_NOT_FOUND(404, "应用不存在！"),
         ORDER_NOT_FOUND(404, "订单不存在！"),
         ORDER_DETAIL_NOT_FOUND(404, "订单数据不存在！"),
+        CATEGORY_NOT_FOND(404,"列表不存在"),
 
         DATA_TRANSFER_ERROR(500, "数据转换异常！"),
         INSERT_OPERATION_FAIL(500, "新增操作失败！"),
@@ -35,6 +36,7 @@ public enum  ExceptionEnum {
         INVALID_ORDER_STATUS(500, "订单状态不正确！"),
 
         UNAUTHORIZED(401, "登录失效或未登录！");
+
 
         private int status;
         private String message;
