@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class BeanHelper {
 
-    public static <T> T copyProperties(Object source, Class<T> target){
+    public static <T> T copyProperties(Object source, Class<T> target) {
         try {
             T t = target.newInstance();
             BeanUtils.copyProperties(source, t);
@@ -26,7 +26,7 @@ public class BeanHelper {
         }
     }
 
-    public static <T> List<T> copyWithCollection(List<?> sourceList, Class<T> target){
+    public static <T> List<T> copyWithCollection(List<?> sourceList, Class<T> target) {
         try {
             return sourceList.stream().map(s -> copyProperties(s, target)).collect(Collectors.toList());
         } catch (Exception e) {
@@ -35,7 +35,7 @@ public class BeanHelper {
         }
     }
 
-    public static <T> Set<T> copyWithCollection(Set<?> sourceList, Class<T> target){
+    public static <T> Set<T> copyWithCollection(Set<?> sourceList, Class<T> target) {
         try {
             return sourceList.stream().map(s -> copyProperties(s, target)).collect(Collectors.toSet());
         } catch (Exception e) {
