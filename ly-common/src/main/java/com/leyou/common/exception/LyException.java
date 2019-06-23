@@ -2,9 +2,7 @@ package com.leyou.common.exception;
 
 import com.leyou.common.enums.ExceptionEnum;
 import lombok.Data;
-import lombok.Getter;
 
-@Getter
 @Data
 public class LyException extends RuntimeException{
 

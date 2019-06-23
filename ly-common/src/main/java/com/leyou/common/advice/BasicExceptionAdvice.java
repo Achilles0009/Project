@@ -16,9 +16,5 @@ public class BasicExceptionAdvice {
         return ResponseEntity.status(e.getStatus()).body(new ExceptionResult(e));
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<String> handleRuntimeException(RuntimeException e) {
-        return ResponseEntity.status(500).body(e.getMessage());
-    }
 
 }
