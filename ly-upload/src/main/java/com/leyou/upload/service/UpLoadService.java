@@ -42,7 +42,7 @@ public class UpLoadService {
 
         //3、保存图片
         //3.1、生成保存目录，保存到nginx所在目录的html下，这样可以直接通过nginx来访问
-        File dir = new File("/usr/local/Cellar/nginx/1.17.0/html");
+        File dir = new File("/usr/local/var/www");
         if (!dir.exists()){
             dir.mkdirs();
         }
