@@ -1,8 +1,10 @@
 package com.leyou.item.controller;
 
 
+import com.leyou.item.dto.SpecGroupDTO;
 import com.leyou.item.service.CategoryService;
 import com.leyou.item.dto.CategoryDTO;
+import com.leyou.item.service.SpecService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +26,11 @@ public class CategoryController {
             @RequestParam(value = "pid", defaultValue = "0") Long pid) {
         return ResponseEntity.ok(this.categoryService.queryListByParent(pid));
     }
+
+    @GetMapping("of/")
+
+
+
+
 
 }

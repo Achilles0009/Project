@@ -29,8 +29,8 @@ zuul:
     item-service: /item/** # 将商品微服务映射到/item/**
     upload-service:
       path: /upload/**
-      serviceId: upload-service
-      strip-prefix: false
+      serviceId: upload-service # strip-prefix: false 网关前缀配置了在Controler需要加上RequestMapping
+
 
 ly:
   cors:

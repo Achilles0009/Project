@@ -81,4 +81,15 @@ public class BrandService {
         }
     }
 
+
+    public BrandDTO queryById(Long id){
+        Brand brand = brandMapper.selectByPrimaryKey(id);
+
+        if (brand == null){
+            throw new LyException(ExceptionEnum.BRAND_NOT_FOUND);
+        }
+
+        return BeanHelper.copyProperties(brand,BrandDTO.class);
+    }
+
 }

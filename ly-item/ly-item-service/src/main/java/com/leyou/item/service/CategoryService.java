@@ -30,4 +30,19 @@ public class CategoryService {
         // 使用自定义工具类，把Category集合转为DTO的集合
         return BeanHelper.copyWithCollection(list, CategoryDTO.class);
     }
+
+
+    public List<CategoryDTO> queryCategoryByIds(List<Long> ids){
+
+        List<Category> list = categoryMapper.selectByIdList(ids);
+
+        if (CollectionUtils.isEmpty(list)){
+
+            //没找到，返回404
+
+            throw new LyException(ExceptionEnum.CATEGORY_NOT_FOND);
+        }
+
+        return BeanHelper.copyWithCollection(list,CategoryDTO.class);
+    }
 }
